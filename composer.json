@@ -1,0 +1,9 @@
+{
+  "name": "smoczynski/coding-standard",
+  "description": "Coding standard",
+  "type": "library",
+  "require": {
+    "squizlabs/php_codesniffer": "^3.5",
+    "slevomat/coding-standard": "^6.4"
+  }
+}

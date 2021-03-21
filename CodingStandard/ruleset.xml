@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../squizlabs/php_codesniffer/phpcs.xsd"
+    name="CodingStandard">
+    <config name="installed_paths" value="../../slevomat/coding-standard"/>
+
+    <rule ref="PSR1"/>
+    <rule ref="PSR12">
+        <exclude name="Squiz.Functions.MultiLineFunctionDeclaration.NewlineBeforeOpenBrace"/>
+    </rule>
+
+    <rule ref="Generic.Files.LineLength">
+        <properties>
+            <property name="lineLimit" value="140"/>
+            <property name="absoluteLineLimit" value="140"/>
+        </properties>
+    </rule>
+    <rule ref="Generic.Formatting.SpaceAfterCast"/>
+    <rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
+    <rule ref="Generic.Strings.UnnecessaryStringConcat">
+        <properties>
+            <property name="allowMultiline" value="true" />
+        </properties>
+    </rule>
+
+    <rule ref="SlevomatCodingStandard.Namespaces.UnusedUses">
+        <properties>
+            <property name="searchAnnotations" value="true"/>
+            <property name="ignoredAnnotations" type="array">
+                <element value="@group"/>
+            </property>
+        </properties>
+    </rule>
+    <rule ref="SlevomatCodingStandard.Namespaces.AlphabeticallySortedUses"/>
+    <rule ref="SlevomatCodingStandard.Namespaces.ReferenceUsedNamesOnly"/>
+    <rule ref="SlevomatCodingStandard.TypeHints.PropertyTypeHint.UselessAnnotation"/>
+    <rule ref="SlevomatCodingStandard.TypeHints.ParameterTypeHint.UselessAnnotation"/>
+    <rule ref="SlevomatCodingStandard.TypeHints.ReturnTypeHint.UselessAnnotation"/>
+    <rule ref="SlevomatCodingStandard.Classes.ClassStructure">
+        <properties>
+            <property name="groups" type="array">
+                <element value="uses"/>
+                <element value="public constants"/>
+                <element value="protected constants"/>
+                <element value="private constants"/>
+                <element value="public static properties"/>
+                <element value="protected static properties"/>
+                <element value="private static properties"/>
+                <element value="public properties"/>
+                <element value="protected properties"/>
+                <element value="private properties"/>
+                <element value="static constructors"/>
+                <element value="constructor"/>
+                <element value="destructor"/>
+                <element value="magic methods"/>
+                <element value="all public methods"/>
+                <element value="all protected methods"/>
+                <element value="all private methods"/>
+            </property>
+        </properties>
+    </rule>
+    <rule ref="SlevomatCodingStandard.Commenting.EmptyComment"/>
+    <rule ref="SlevomatCodingStandard.ControlStructures.RequireYodaComparison" phpcs-only="true"/>
+    <rule ref="SlevomatCodingStandard.Variables.UnusedVariable"/>
+    <rule ref="SlevomatCodingStandard.PHP.UselessSemicolon"/>
+
+    <rule ref="Squiz.WhiteSpace.OperatorSpacing">
+        <properties>
+            <property name="ignoreNewlines" value="true"/>
+        </properties>
+    </rule>
+</ruleset>
